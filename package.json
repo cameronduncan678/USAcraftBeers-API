@@ -1,0 +1,24 @@
+{
+  "name": "usacraftbeers-api",
+  "version": "1.0.0",
+  "description": "A web REST API for a craft beer database",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cameronduncan678/USAcraftBeers-API.git"
+  },
+  "author": "cameron duncan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cameronduncan678/USAcraftBeers-API/issues"
+  },
+  "homepage": "https://github.com/cameronduncan678/USAcraftBeers-API#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  }
+}
