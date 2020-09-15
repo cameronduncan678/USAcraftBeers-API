@@ -9,7 +9,10 @@ router.route('/').get((req, res) => {
     status: 200,
     meta: metadata,
     data: {
-      endpoints: [{ getmeta: 'http://localhost:9001/api' }],
+      endpoints: [
+        { getmeta: 'http://localhost:9001/api' },
+        { getallbeers: 'http://localhost:9001/api/getallbeers' },
+      ],
     },
   });
 });

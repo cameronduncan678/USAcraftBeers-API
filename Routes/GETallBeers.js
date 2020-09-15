@@ -3,12 +3,13 @@ const metadata = require('../Meta/meta');
 const mysql = require('mysql');
 const conn = require('../Data/mysql');
 
-var model = require('../Models/getAllBeers');
-
 const router = express.Router();
 
-const SQL = 'SELECT name, id, style, brewery_id, ounces FROM beers ORDER BY id';
+//Route Model and SQL code string
+var model = require('../Models/getAllBeers');
+const SQL = require('../SQL/getAllBeers');
 
+//SQL query
 function query() {
   return new Promise((resolve, reject) => {
     conn.query(SQL, (err, result) => {
@@ -20,6 +21,7 @@ function query() {
   });
 }
 
+//API route controller
 router.route('/').get(async (req, res) => {
   try {
     model.data.beers = await query();
