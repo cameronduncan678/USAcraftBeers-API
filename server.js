@@ -11,6 +11,7 @@ const PORT = process.env.PORT;
 const NODE_ENV = process.env.NODE_ENV;
 
 app.use('/api', require('./Routes/GETmeta'));
+app.use('/api/getallbeers', require('./Routes/GETallBeers'));
 
 app.listen(PORT, () => {
   console.log(`Server running in mode: ${NODE_ENV}\n`);
