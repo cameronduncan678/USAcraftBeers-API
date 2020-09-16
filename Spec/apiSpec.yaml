@@ -8,11 +8,52 @@ info:
   contact: cameronduncan678@gmail.com
 servers:
   - url: http://localhost:9001/api
+
+tags:
+  - name: beers
+    description: Endpoints using beers table
+  - name: breweries
+    description: Endpoints using breweries table
+
 paths:
   /allbeers:
     get:
+      tags:
+        - beers
       summary: Retrieves all the Beers in the Database
+
+  /beersbystyle:
+    get:
+      tags:
+        - beers
+      summary: Retrieve all the Beers by particular Style
+
+  /beersbyBrewery:
+    get:
+      tags:
+        - beers
+      summary: Retrieve beers made by brewery
+
+  /beer:
+    get:
+      tags:
+        - beers
+      summary: Retrieve beer by id
 
   /allbreweries:
     get:
+      tags:
+        - breweries
       summary: Retrieves all the Breweries in the Database
+
+  /brewerycity:
+    get:
+      tags:
+        - breweries
+      summary: Retrieve all breweries by City
+
+  /brewery:
+    get:
+      tags:
+        - breweries
+      summary: Retrieve brewery by id
