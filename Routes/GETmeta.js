@@ -12,6 +12,7 @@ router.route('/').get((req, res) => {
       endpoints: [
         { getmeta: 'http://localhost:9001/api' },
         { getallbeers: 'http://localhost:9001/api/getallbeers' },
+        { getallbreweries: 'http://localhost:9001/api/getallbreweries' },
       ],
     },
   });

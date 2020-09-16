@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const sqlPath = __dirname + '\\' + 'getAllBeers.sql';
+const sqlPath = __dirname + '\\' + 'getAllBrewery.sql';
 
 const SQL = fs.readFileSync(sqlPath, 'utf8', (err, buf) => {
   return buf.toString();

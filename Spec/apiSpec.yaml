@@ -1,0 +1,18 @@
+openapi: 3.0.0
+info:
+  title: USA Craft Beers API
+  version: 1.0.0
+  description: A REST API for retrieving data about Craft Beers
+    brewed in USA. Alongside the Breweries that make the beers, ounces and
+    alcohol content.
+  contact: cameronduncan678@gmail.com
+servers:
+  - url: http://localhost:9001/api
+paths:
+  /allbeers:
+    get:
+      summary: Retrieves all the Beers in the Database
+
+  /allbreweries:
+    get:
+      summary: Retrieves all the Breweries in the Database
