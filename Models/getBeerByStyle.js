@@ -5,7 +5,8 @@ var model = {
   status: 200,
   meta: 'http://localhost:9001/api',
   data: {
-    breweries: [],
+    style: '',
+    beers: [],
   },
 };
 

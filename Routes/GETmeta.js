@@ -11,8 +11,9 @@ router.route('/').get((req, res) => {
     data: {
       endpoints: [
         { getmeta: 'http://localhost:9001/api' },
-        { getallbeers: 'http://localhost:9001/api/getallbeers' },
-        { getallbreweries: 'http://localhost:9001/api/getallbreweries' },
+        { getallbeers: 'http://localhost:9001/api/allbeers' },
+        { getallbreweries: 'http://localhost:9001/api/allbreweries' },
+        { getbrewerybtid: 'http://localhost:9001/api/brewery/0' },
       ],
     },
   });
