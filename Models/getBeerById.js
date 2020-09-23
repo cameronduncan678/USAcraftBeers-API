@@ -2,9 +2,10 @@ var model = {
   success: true,
   status: 200,
   meta: 'http://localhost:9001/api',
-  host: 'http://localhost:9001/api/allbeers',
+  host: 'http://localhost:9001/api/beer/:id',
   data: {
-    beers: [],
+    id: String,
+    beer: Object,
   },
 };
 

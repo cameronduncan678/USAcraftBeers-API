@@ -6,12 +6,12 @@ const conn = require('../Data/mysql');
 const router = express.Router();
 
 //Route Model and SQL code string
-var model = require('../Models/getBreweryById');
-var SQL = require('../SQL/getBreweryById');
+var model = require('../Models/getBeerById');
+var SQL = require('../SQL/getbeerById');
 
 //SQL query
 function query(id) {
-  newSQL = SQL.replace('£BREWERYID£', id);
+  newSQL = SQL.replace('£ID£', id);
   return new Promise((resolve, reject) => {
     conn.query(newSQL, (err, result) => {
       if (err) {
@@ -27,7 +27,7 @@ router.route('/:id').get(async (req, res) => {
   try {
     var id = req.params.id;
     model.data.id = id;
-    model.data.brewery = await query(id);
+    model.data.beer = await query(id);
     res.status(200).json(model);
   } catch (err) {
     console.error(err);

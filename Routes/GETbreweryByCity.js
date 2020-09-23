@@ -6,28 +6,28 @@ const conn = require('../Data/mysql');
 const router = express.Router();
 
 //Route Model and SQL code string
-var model = require('../Models/getBreweryById');
-var SQL = require('../SQL/getBreweryById');
+var model = require('../Models/getBreweryByCity');
+var SQL = require('../SQL/getBreweryByCity');
 
 //SQL query
-function query(id) {
-  newSQL = SQL.replace('£BREWERYID£', id);
+function query(city) {
+  var newSQL = SQL.replace('£CITY£', "'" + city + "'");
   return new Promise((resolve, reject) => {
     conn.query(newSQL, (err, result) => {
       if (err) {
         return reject(err);
       }
-      return resolve(result[0]);
+      return resolve(result);
     });
   });
 }
 
 //API route controller
-router.route('/:id').get(async (req, res) => {
+router.route('/:city').get(async (req, res) => {
   try {
-    var id = req.params.id;
-    model.data.id = id;
-    model.data.brewery = await query(id);
+    city = req.params.city;
+    model.data.city = city;
+    model.data.breweries = await query(city);
     res.status(200).json(model);
   } catch (err) {
     console.error(err);

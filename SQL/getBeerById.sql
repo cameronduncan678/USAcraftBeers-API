@@ -1,0 +1,1 @@
+SELECT name, style, ounces, abv FROM beers WHERE id = £ID£;
